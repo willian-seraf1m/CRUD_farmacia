@@ -17,6 +17,15 @@ import jakarta.validation.constraints.Size;
 @Table(name = "tb_produtos")
 public class Produto {
 	
+	public Produto(Long id, String nome, BigDecimal preco, Categoria categoria) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.categoria = categoria;
+	}
+	
+	public Produto() {};
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -63,6 +72,4 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-
-
 }
